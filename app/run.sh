@@ -13,7 +13,7 @@ pip install -r requirements.txt
 python manage.py makemigrations --noinput
 python manage.py migrate --noinput 
 cd ..  
-python backend/manage.py runserver & 
+python backend/manage.py runserver 3000 & 
 server_pid=$!
 cd frontend 
 npm install
