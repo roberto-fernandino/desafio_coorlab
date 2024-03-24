@@ -26,7 +26,7 @@ export default {
     async getCities() {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/cities/?format=json"
+          "http://localhost:3000/api/cities/?format=json"
         );
         const newCities = response.data;
         for (let city of newCities) {
@@ -50,7 +50,7 @@ export default {
       } else {
         try {
           const response = await axios.get(
-            `http://localhost:8000/api/trips/by_city/${cityId}`
+            `http://localhost:3000/api/trips/by_city/${cityId}`
           );
           const newTrips = response.data;
 
