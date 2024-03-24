@@ -13,5 +13,6 @@ pip install -r requirements.txt
 cd ..
 python backend/manage.py runserver & 
 cd frontend
+npm install
 npm run dev -- --port 8080 &
 wait
