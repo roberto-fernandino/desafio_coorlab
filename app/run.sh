@@ -11,10 +11,14 @@ source env/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 python manage.py makemigrations --noinput
-python manage.py migrate --noinput
-cd ..
+python manage.py migrate --noinput 
+cd ..  
 python backend/manage.py runserver & 
-cd frontend
+server_pid=$!
+cd frontend 
 npm install
-npm run dev -- --port 8080 &
+npm run dev -- --port 8080 & 
+
+trap "kill $server_pid" SIGINT 
+
 wait
